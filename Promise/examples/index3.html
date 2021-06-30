@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise的实现</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script src="../implement/index.js"></script>
+<script>
+const p1 = Promise.resolve(123)
+p1.then((res) => {
+  console.log('p1 => ', res)
+})
+
+const p2 = Promise.resolve(Promise.resolve(456))
+p2.then((res) => {
+  console.log('p2 => ', res)
+})
+
+const p3 = Promise.reject(789)
+p3.catch((res) => {
+  console.log('p3 catch => ', res)
+})
+
+const p4 = Promise.reject(Promise.reject(110))
+p4.catch((res) => {
+  console.log('p4 catch => ', res)
+})
+</script>
